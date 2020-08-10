@@ -1,0 +1,14 @@
+<h1>Result</h1>
+<%= params[:score].split("") %>
+<% if params[:score] %>
+  <% params[:score].split("").each do |letter| %>
+      <% letter.upcase.include?(params["letters"]) %>
+      <p><%= letter %></p>
+      <br>
+      <%= params["letters"]  %>
+      <% end %>
+<%= "Sorry but #{params[:score]} can't build out of #{params["letters"]}" %>
+<% end %>
+</br>
+</br>
+<%= link_to 'Play again', new_path %>
